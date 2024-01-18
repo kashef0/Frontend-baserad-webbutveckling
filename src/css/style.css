@@ -3,6 +3,7 @@
 
 * {
     max-width: 1920px;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -21,7 +22,7 @@ header {
 .header-section {
     width: 50%;
     font-size: 2em;
-    padding: .50em;
+    padding: .20em;
     display: flex;
     align-items: center;
 }
@@ -30,7 +31,10 @@ header {
     text-decoration: none;
 }
 
-
+.header-section h1 a img {
+    width: 100%;
+    max-width: 250px;
+}
 
 header nav {
     background-color: #2b2e35;
@@ -63,12 +67,18 @@ header nav ul .links a {
     color: ghostwhite;
     text-decoration: none;
     font-weight: 700;
-    padding: 0 1em;
+    font-family: "Roboto", sans-serif;
+    margin: 0 1em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    
 }
 
-nav .links:hover {
-    background-color: hsla(0, 0%, 44%, 0.59);
-    cursor: pointer;
+header nav ul .links a:hover {
+    border-bottom: 4px solid #BBBBBB;
+    transition: 300ms;
+    opacity: 1;
+    
 }
 
 .menuBtn {
@@ -119,20 +129,79 @@ nav .links:hover {
 
 body {
     background-color: ghostwhite;
+    height: 100vh;
+}
+
+/* ----------------innehållet--------------------- */
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.om-uppgiften {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
+.om-uppgiften h1 {
+    padding-top: 1em;
+    font-size: 2.5em;
+}
 
+.uppgift-text {
+    width: 60%;
+    margin: 1em;
+    height: auto;
+    padding: .50em;
+    background-color: #dedada;
+    border-radius: 5px;
+}
 
+.uppgift-text h2 {
+    font-weight: 700;
+    font-size: 1.6em;
+}
 
+.uppgift-text h2, h3, p {
+    padding: 0 1em 1em 0;
+}
 
+.uppgift-text h3 {
+    padding: .50em 0;
+}
 
+.uppgift-text p {
+    line-height: 1.2em;
+    font-weight: 400;
+}
 
+.uppgift-text ul {
+    line-height: 1.3em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
 
+/* -----------------------------footer--------------------- */
 
+footer {
+    background-color: #2b2e35;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
 
-
-
+footer .footer-head, .footer-para {
+    font-size: .75em;
+    color: ghostwhite;
+    text-align: center;
+    padding-bottom: .50em;
+}
 
 
 @media only screen and (min-width: 992px) {
@@ -168,5 +237,13 @@ body {
         display: inline;
         padding: 1.2em 0;
         white-space: nowrap;
+    }
+
+    .uppgift-text {
+        width: 40%;
+    }
+    
+    .uppgift-text ul {
+        padding-left: 2em;
     }
 }
