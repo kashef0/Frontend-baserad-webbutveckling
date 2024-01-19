@@ -1,6 +1,6 @@
 {
     "jpeg": {
-        "quality": 75,
+        "quality": 60,
         "chromaSubsampling": "4:4:4"
     },
     "webp": {

@@ -48,11 +48,29 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
+    .pictures picture {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
     main {
         height: auto;
     }
     .om-uppgiften .uppgift-text {
         width: 90%;
+    }
+
+    .tid section {
+        width: 80%;
+    }
+    .pictures picture {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
     }
 }

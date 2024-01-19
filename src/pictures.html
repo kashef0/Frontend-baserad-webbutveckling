@@ -2,20 +2,18 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/pictures.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/menu-logo.css">
-    <link rel="stylesheet" href="./css/mediaquery.css">
-    <link rel="icon" href="./log-icon/">
-    <script src="Js/main.js" type="module"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="icon" href="../src/log-icon/favicon.ico">
+    <script src="../src/Js/main.js" type="module"></script>
     
     <title>KASHEF</title>
 </head>
 <body>
     <header>
         <section class="header-section">
-            <h1 class="logo"><a href="#"><img src="./log-icon/kashef-logo-tra.png" alt="kashef logo"></a></h1>
+            <h1 class="logo"><a href="../src/index.html"><img src="../src/log-icon/kashef-logo-tra.png" alt="kashef logo"></a></h1>
         </section>
         <button class="menuBtn open" id="open-menu">
             <span class="menu-icon">
@@ -34,8 +32,8 @@
                 <span class="menu-text">stäng</span>
             </button>
             <ul>
-                <li class="links"><a class="action" href="">Startsida</a></li>
-                <li class="links"><a href="">Bilder</a></li>
+                <li class="links"><a href="../src/index.html">Startsida</a></li>
+                <li class="links"><a class="action" href="#">Bilder</a></li>
                 <li class="links"><a href="">Om proccing</a></li>
             </ul>
         </nav>
@@ -43,35 +41,40 @@
     <main>
         <div class="pictures">
             <picture>
-                <source srcset="./images/bergamo.jpg?as=avif&width=800" type="image/avif" />
-                <source srcset="./images/bergamo.jpg?as=webp&width=800" type="image/webp" />
-                <source srcset="./images/bergamo.jpg?as=jpg&width=800" type="image/jpeg" />
-                <img src="./images/bergamo.jpg?width=200" alt="bergamo" />
+                <source srcset="../src/images/bergamo.jpg?as=avif&width=800" type="image/avif" />
+                <source srcset="../src/images/bergamo.jpg?as=webp&width=800" type="image/webp" />
+                <source srcset="../src/images/bergamo.jpg?as=jpg&width=800" type="image/jpeg" />
+                <img src="../src/images/bergamo.jpg?width=200" alt="bergamo" />
             </picture>
             <picture>
-                <source srcset="./images/bergamo2.jpg.jpg?as=avif&width=800" type="image/avif" />
-                <source srcset="./images/bergamo2.jpg?as=webp&width=800" type="image/webp" />
-                <source srcset="./images/bergamo2.jpg?as=jpg&width=800" type="image/jpeg" />
-                <img src="./images/bergamo2.jpg?width=200" alt="bergamo, italy" />
+                <source srcset="../src/images/bergamo2.jpg?as=avif&width=800" type="image/avif" />
+                <source srcset="../src/images/bergamo2.jpg?as=webp&width=800" type="image/webp" />
+                <source srcset="../src/images/bergamo2.jpg?as=jpg&width=800" type="image/jpeg" />
+                <img src="../src/images/bergamo2.jpg?width=200" alt="bergamo, italy" />
             </picture>
             <picture>
-                <source srcset="./images/helsingborg.jpg.jpg.jpg?as=avif&width=800" type="image/avif" />
-                <source srcset="./images/helsingborg.jpg?as=webp&width=800" type="image/webp" />
-                <source srcset="./images/helsingborg.jpg?as=jpg&width=800" type="image/jpeg" />
-                <img src="./images/helsingborg.jpg?width=200" alt="helsingborg" />
+                <source srcset="../src/images/helsingborg.jpg?as=avif&width=800" type="image/avif" />
+                <source srcset="../src/images/helsingborg.jpg?as=webp&width=800" type="image/webp" />
+                <source srcset="../src/images/helsingborg.jpg?as=jpg&width=800" type="image/jpeg" />
+                <img src="../src/images/helsingborg.jpg?width=200" alt="helsingborg" />
             </picture>
             <picture>
-                <source srcset="./images/helsingborg1.jpg.jpg.jpg?as=avif&width=800" type="image/avif" />
-                <source srcset="./images/helsingborg1.jpg?as=webp&width=800" type="image/webp" />
-                <source srcset="./images/helsingborg1.jpg?as=jpg&width=800" type="image/jpeg" />
-                <img src="./images/helsingborg1.jpg?width=200" alt="helsingborg, snö vädret" />
+                <source srcset="../src/images/helsingborg1.jpg?as=avif&width=800" type="image/avif" />
+                <source srcset="../src/images/helsingborg1.jpg?as=webp&width=800" type="image/webp" />
+                <source srcset="../src/images/helsingborg1.jpg?as=jpg&width=800" type="image/jpeg" />
+                <img src="../src/images/helsingborg1.jpg?width=200" alt="helsingborg, snö vädret" />
             </picture>
             <picture>
-                <source srcset="./images/helsingborg2.jpg.jpg.jpg?as=avif&width=800" type="image/avif" />
-                <source srcset="./images/helsingborg2.jpg?as=webp&width=800" type="image/webp" />
-                <source srcset="./images/helsingborg2.jpg?as=jpg&width=800" type="image/jpeg" />
-                <img src="./images/helsingborg2.jpg?width=200" alt="helsingborg snöar ute" />
+                <source srcset="../src/images/helsingborg2.jpg?as=avif&width=800" type="image/avif" />
+                <source srcset="../src/images/helsingborg2.jpg?as=webp&width=800" type="image/webp" />
+                <source srcset="../src/images/helsingborg2.jpg?as=jpg&width=800" type="image/jpeg" />
+                <img src="../src/images/helsingborg2.jpg?width=200" alt="helsingborg snöar ute" />
             </picture>
+        </div>
+        <div class="tid">
+            <section id="currentTime">
+
+            </section>
         </div>
     </main>
     <footer>

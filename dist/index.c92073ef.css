@@ -6,143 +6,45 @@
   padding: 0;
 }
 
-header {
-  background-color: #2b2e35;
-  justify-content: space-between;
-  width: 100%;
-  height: auto;
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  display: flex;
-  position: relative;
-}
-
-.header-section {
-  align-items: center;
-  width: 50%;
-  padding: .5em;
-  font-size: 2em;
-  display: flex;
-}
-
-.header-section h1 a {
-  color: #f8f8ff;
-  text-decoration: none;
-}
-
-header nav {
-  z-index: 1;
-  background-color: #2b2e35;
-  width: 30%;
-  height: auto;
-  font-size: 1.3em;
-  list-style: none;
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-header nav ul {
-  text-align: center;
-  width: 100%;
-  margin: 0 2em 0 auto;
-  list-style: none;
-}
-
-header nav ul .links {
-  justify-content: center;
-  padding: 1.2em .5em;
-  display: flex;
-}
-
-header nav ul .links a {
-  color: #f8f8ff;
-  text-transform: uppercase;
-  opacity: .75;
-  margin: 0 1em;
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-header nav ul .links a:hover {
-  opacity: 1;
-  border-bottom: 4px solid #bbb;
-  transition: all .3s;
-}
-
-.menuBtn {
-  cursor: pointer;
-  border: 2px solid #000;
-  align-items: center;
-  padding: 8px 15px;
-  display: flex;
-}
-
-.open {
-  margin: 1em;
-}
-
-.menu-icon {
-  margin-right: 5px;
-}
-
-.bars {
-  background-color: #2c363f;
-  width: 20px;
-  height: 3px;
-  margin: 5px 0;
-  display: block;
-}
-
-.menu-text {
-  color: #2c363f;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-
-.cross1 {
-  width: 25px;
-  position: relative;
-  top: 5px;
-  transform: rotate(45deg);
-}
-
-.cross2 {
-  width: 25px;
-  position: relative;
-  top: -3px;
-  transform: rotate(135deg);
-}
-
 body {
   background-color: #f8f8ff;
-}
-
-main {
-  width: 100%;
   height: 100vh;
 }
 
 .om-uppgiften {
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   font-family: Roboto, sans-serif;
   display: flex;
 }
 
-.uppgift-text {
-  width: 50%;
-  height: auto;
-  margin: 1em;
-  padding: 1em;
+.om-uppgiften h1 {
+  padding-top: 1em;
+  font-size: 2.5em;
 }
 
-.uppgift-text h1 {
-  padding-bottom: .5em;
-  font-size: 2em;
+.uppgift-text {
+  background-color: #dedada;
+  border-radius: 5px;
+  width: 60%;
+  height: auto;
+  margin: 1em;
+  padding: .5em;
+}
+
+.uppgift-text h2 {
+  font-size: 1.6em;
   font-weight: 700;
+}
+
+.uppgift-text h2, h3, p {
+  padding: 0 1em 1em 0;
+}
+
+.uppgift-text h3 {
+  padding: .5em 0;
 }
 
 .uppgift-text p {
@@ -150,40 +52,47 @@ main {
   line-height: 1.2em;
 }
 
-@media only screen and (width >= 992px) {
-  .menuBtn {
-    display: none;
-  }
+.uppgift-text ul {
+  padding-bottom: 1em;
+  padding-left: 1em;
+  line-height: 1.3em;
+}
 
-  #open-menu {
-    display: none !important;
-  }
+footer {
+  background-color: #2b2e35;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
 
-  header {
-    position: static;
-  }
+footer .footer-head, .footer-para {
+  color: #f8f8ff;
+  text-align: center;
+  padding-bottom: .5em;
+  font-size: .75em;
+}
 
-  header nav {
-    width: auto;
-    height: auto;
-    font-size: 1.3em;
-    position: static;
-    top: 0;
-    right: 0;
-    display: block !important;
-  }
+.tid {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #5d6f9a;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  font-family: Roboto Slab, sans-serif;
+  display: flex;
+}
 
-  header nav ul {
-    align-items: center;
-    height: 100%;
-    display: flex;
-  }
+.tid section {
+  background-color: #2b2e35;
+  border-radius: 5px;
+  width: 25%;
+  padding: 20px;
+}
 
-  header nav .links {
-    white-space: nowrap;
-    padding: 1.2em 0;
-    display: inline;
-  }
+.tid section h3 {
+  padding: 0;
 }
 
 /*# sourceMappingURL=index.c92073ef.css.map */
