@@ -1,0 +1,58 @@
+@media only screen and (min-width: 1160px)  {
+    .uppgift-text {
+        width: 60%;
+        max-width: 600px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    
+
+    .menuBtn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+    }
+
+    header nav {
+        display: block !important;
+        position: static;
+        right: 0;
+        top: 0;
+        height: auto;
+        font-size: 1.3em;
+        width: auto;
+    }
+
+    header nav ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    header nav .links {
+        display: inline;
+        padding: 1.2em 0;
+        white-space: nowrap;
+    }
+    
+    .uppgift-text ul {
+        padding-left: 2em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main {
+        height: auto;
+    }
+    .om-uppgiften .uppgift-text {
+        width: 90%;
+    }
+}

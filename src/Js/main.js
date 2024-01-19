@@ -1,5 +1,7 @@
 "use strict";
 
+import "./klockan"
+
 let openBtn = document.getElementById("open-menu");
 let closeBtn = document.getElementById("close-menu");
 
@@ -18,4 +20,6 @@ function toggleMenu() {
         navMenuEl.style.display = "none";
     }
 }
+
+
 

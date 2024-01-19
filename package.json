@@ -10,6 +10,11 @@
     "build": "parcel build"
   },
   "devDependencies": {
-    "parcel": "^2.11.0"
+    "parcel": "^2.11.0",
+    "sharp": "^0.31.3"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "dependencies": {
+    "parcel-plugin-concat": "^0.2.3"
   }
 }
