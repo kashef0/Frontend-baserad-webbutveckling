@@ -2,7 +2,6 @@
 
 import "./klockan.js"
 
-
 let openBtn = document.getElementById("open-menu");
 let closeBtn = document.getElementById("close-menu");
 

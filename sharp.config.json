@@ -1,12 +1,19 @@
 {
     "jpeg": {
-        "quality": 70,
+        "quality": 75,
         "chromaSubsampling": "4:4:4"
     },
     "webp": {
+        "quality": 75,
         "nearLossless": true
     },
     "png": {
+        "quality": 75,
         "palette": true
+    },
+
+    "avif": {
+        "quality": 75,
+        "nearLossless": true
     }
-}
+}   
