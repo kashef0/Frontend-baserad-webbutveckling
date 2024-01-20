@@ -16,5 +16,5 @@ function formatTime() {
 
 setInterval(function () {
     document.getElementById("tid").innerHTML = formatTime();
-}, 1000);
+}, 500);
 

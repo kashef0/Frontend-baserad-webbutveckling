@@ -17,6 +17,7 @@
 
 body {
     background-color: ghostwhite;
+    font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -31,7 +32,6 @@ main {
 
 .om-uppgiften {
     width: 100%;
-    font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +80,16 @@ main {
     line-height: 1.3em;
     padding-left: 1em;
     padding-bottom: 1em;
+}
+
+.uppgift-text ul .text {
+    font-weight: 600;
+}
+
+.uppgift-text ul .text small {
+    font-size: 1em;
+    font-weight: 300;
+    padding: .20em 0;
 }
 
 /* -----------------------------footer--------------------- */
