@@ -18,12 +18,12 @@ header {
     display: flex;
     align-items: center;
 }
-.header-section h1 a{
+.header-section h2 a{
     color: ghostwhite;
     text-decoration: none;
 }
 
-.header-section h1 a img {
+.header-section h2 a img {
     width: 100%;
     max-width: 250px;
 }

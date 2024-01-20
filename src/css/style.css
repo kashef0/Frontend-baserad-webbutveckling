@@ -17,7 +17,13 @@
 
 body {
     background-color: ghostwhite;
-    height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* ----------------innehållet--------------------- */
@@ -36,6 +42,11 @@ body {
 .om-uppgiften h1 {
     padding-top: 1em;
     font-size: 2.5em;
+    background-color: #5d6f9a;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    color: ghostwhite;
 }
 
 .uppgift-text {
@@ -90,7 +101,7 @@ footer .footer-head, .footer-para {
 /* ---------------------tid--------------- */
 
 
-.tid {
+#tid {
     width: 100%;
     text-align: center;
     text-transform: uppercase;
@@ -102,7 +113,7 @@ footer .footer-head, .footer-para {
     padding: 10px;
 }
 
-.tid section {
+#tid section {
     width: 25%;
     background-color: #2b2e35;
     padding: 20px;
@@ -110,6 +121,6 @@ footer .footer-head, .footer-para {
 
 }
 
-.tid section h3 {
+#tid section h3 {
     padding: 0;
 }

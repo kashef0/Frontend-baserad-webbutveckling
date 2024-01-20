@@ -11,10 +11,10 @@ function formatTime() {
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    return '<h2>' + hours + '<span>:' + minutes + ':' +second + '</span></h2><small> '+ ampm + '</small><h3>' + days[d.getDay()] + '<br><span>' + months[d.getMonth()] + '-' + d.getDate() + '</span>-' + d.getFullYear() + '</h3>';
+    return '<section>' + '<h2>' + hours + '<span>:' + minutes + ':' +second + '</span></h2><small> '+ ampm + '</small><h3>' + days[d.getDay()] + '<br><span>' + months[d.getMonth()] + '-' + d.getDate() + '</span>-' + d.getFullYear() + '</h3>' + '</section>';
 }
 
 setInterval(function () {
-    document.getElementById("currentTime").innerHTML = formatTime();
+    document.getElementById("tid").innerHTML = formatTime();
 }, 1000);
 
