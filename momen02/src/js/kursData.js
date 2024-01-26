@@ -16,7 +16,7 @@ async function getData() {
 
         
     } catch (error) {
-        console.error('Det uppstod ett fel:', error.message);
+        console.error('Det uppstod ett fel', error.message);
     }
 }
 
