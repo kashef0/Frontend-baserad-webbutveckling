@@ -1,0 +1,16 @@
+.search-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.search-holder .search-label {
+    padding: 10px;
+    font-size: 1.6em;
+}
+
+#search {
+    padding: 10px;
+    width: 50%;
+}

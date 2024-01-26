@@ -1,0 +1,41 @@
+@import url("navMenu.css");
+@import url("mediaquery.css");
+@import url("footer.css");
+@import url("searchMotor.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=Playfair+Display:ital,wght@1,500&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    max-width: 1920px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------------------------------------------------ */
+
+
+body {
+    background-color: ghostwhite;
+    font-family: "Roboto", sans-serif;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ----------------innehållet--------------------- */
+
+
+.om-uppgiften {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+

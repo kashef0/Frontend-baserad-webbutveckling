@@ -1,0 +1,15 @@
+{
+  "name": "momen02",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Mohamed Abokashef",
+  "license": "ISC",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
