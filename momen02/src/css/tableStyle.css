@@ -1,0 +1,112 @@
+.search-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.search-holder .search-label {
+    padding: 10px;
+    font-size: 1.6em;
+}
+
+#search {
+    padding: 10px;
+    width: 50%;
+}
+
+
+/* ----------------------kurs-data------------------ */
+
+.om-uppgiften {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.om-uppgiften h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    padding: 1em;
+}
+
+
+.om-kurser {
+    margin-top: 1em;
+    padding: 1em;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#kursData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.thead {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: ghostwhite;
+    padding: 1em;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+.kursnamn_rubrik {
+    width: 45%;
+    text-align: start;
+}
+
+tbody {
+    display: flex;
+}
+
+.kursList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em;
+    background-color: ghostwhite;
+    margin-bottom: .25em;
+}
+
+.kurskod {
+    width: 20%;
+    text-align: start;
+}
+
+.progression {
+    width: 10%;
+    text-align: center;
+}
+
+.kursNamn {
+    width: 60%;
+}
+
+@media screen and (max-width: 700px) {
+    .om-kurser {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .om-kurser {
+        width: 100%;
+    }
+
+    .kursList {
+        padding: .50em;
+    }
+}
