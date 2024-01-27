@@ -100,7 +100,7 @@ function landData(kurs) {
     document.getElementById("code").addEventListener("click", () => sortBy("code"));
     document.getElementById("name").addEventListener("click", () => sortBy("coursename"));
     document.getElementById("progression").addEventListener("click", () => sortBy("progression"));
-    document.getElementById("search").HTMLInputElementObject.addEventListener('input', function (evt) {filterBy(evt.target.value)});
+    document.getElementById("search").addEventListener('input', function (El) {filterBy(El.target.value.toLowerCase())});
 
 }
 
@@ -110,10 +110,11 @@ function sortBy(item) {
     landData(sortering);
     
 }
-function filterBy(item) {
+function filterBy(valueInput) {
     let filtering = kursData.filter((land) => {
-        return land.code.includes(item) || land.coursename.includes(item) || land.progression.includes(item)
+        return land.code.toLowerCase().includes(valueInput) || land.coursename.toLowerCase().includes(valueInput) || land.progression.toLowerCase().includes(valueInput);
     });
     landData(filtering);
     
 }
+
