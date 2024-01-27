@@ -81,9 +81,9 @@ function landData(kurs) {
     let kursInfoEl = document.getElementById("kursData");
     kursInfoEl.innerHTML = `
     <tr class="thead">
-        <th id="code">kursKod</th>
-        <th class="kursnamn_rubrik" id="name">kursnamn</th>
-        <th id="progression">progression</th>
+        <th id="code"><a href="#" role="button">kursKod</a></th>
+        <th class="kursnamn_rubrik" id="name" role="button"><a href="#">kursnamn</a></th>
+        <th id="progression"><a href="#" role="button">progression</a></th>
     </tr>
     `
     kurs.forEach((element) => {
@@ -112,7 +112,7 @@ function sortBy(item) {
 }
 function filterBy(valueInput) {
     let filtering = kursData.filter((land) => {
-        return land.code.toLowerCase().includes(valueInput) || land.coursename.toLowerCase().includes(valueInput) || land.progression.toLowerCase().includes(valueInput);
+        return land.code.includes(valueInput) || land.coursename.toLowerCase().includes(valueInput) || land.progression.toLowerCase().includes(valueInput);
     });
     landData(filtering);
     
