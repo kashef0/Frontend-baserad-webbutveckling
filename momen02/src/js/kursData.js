@@ -67,12 +67,10 @@ async function getData() {
             throw new Error('felaktigt svar från servern');
 
         }
-        // let kurs = kursData.map(kod => kod);
-
         landData(kursData);
 
     } catch (error) {
-        console.error('Det uppstod ett fel', error.message);
+        document.getElementById("error").innerHTML = "<p>Något gick fel, prova igen senare!</p>"
     }
 }
 
@@ -100,7 +98,7 @@ function landData(kurs) {
     document.getElementById("code").addEventListener("click", () => sortBy("code"));
     document.getElementById("name").addEventListener("click", () => sortBy("coursename"));
     document.getElementById("progression").addEventListener("click", () => sortBy("progression"));
-    document.getElementById("search").addEventListener('input', function (El) {filterBy(El.target.value.toLowerCase())});
+    document.getElementById("search").addEventListener('input', (El) => {filterBy(El.target.value.toLowerCase())});
 
 }
 
