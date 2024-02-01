@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+$main-color: #2b2e35;
+$hover-color: #c42b2b;
+$bars-color: #2C363F;
+$colorText: #036;
+$bakgrundColor: lighten(rgb(220, 218, 215), 10%);
+$main-font-family: 'Nanum Gothic', sans-serif;
+$second-font-family: 'Roboto', sans-serif;
+$main-font-size: 2em;
+$second-font-size: 1.3em;
+
+
+
+
+$light-background: lighten(rgb(220, 218, 215), 10%);
+$light-text: #036;
+$dark-background: #000000;
+$dark-text: #ffffff;
+
+
+
+$dark_mod: 'Dark mode';
+$light_mod: 'Light mode';
+
+
+$theme: (
+    light: (
+        text: #333,
+        bakgrund: #fff,
+        bran: #567567,
+    ),
+    dark: (
+        text: #fff,
+        bakgrund: #333,
+        brand: #abcabc,
+    ),
+);

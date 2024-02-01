@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <link rel="icon" href="/images/favicon.ico">
+    <script src="/src/js/main.js" type="module"></script>
+    <title>Sass</title>
+</head>
+<body>
+    <header>
+        <section class="header-section">
+            <h2 class="logo">KASHEF</h2>
+        </section>
+        <button class="menuBtn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <nav id="nav-menu">
+            <button class="menuBtn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">stäng</span>
+            </button>
+            <ul>
+                <li class="links"><a href="./index.html">Startsida</a></li>
+                <li class="links"><a href="#">Bilder</a></li>
+                <li class="links"><a href="#">Om proccing</a></li>
+                <li class="links"><a class="action" href="#">Om Sass</a></li>
+                <li class="links"><a href="#">kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="container" class="dark-theme">
+            <h1 class="rubrik">Sass</h1>
+            <div class="parent">
+                <section class="first_child">
+                    <article class="text_beskrivning">
+                        <h2>Egyptens pyramid</h2>
+                    <p>
+                        Egyptens pyramider är de största byggnadsverk människan någonsin skapat förutom kinesiska muren.
+                    </p>
+                    <p>
+                        Pyramiderna var gravkamrar för de egyptiska faraonerna. Om faraonernas kroppar förstördes skulle solen slockna och
+                        jorden gå under, trodde egyptierna. Därför gällde det att bygga säkra gravar för de döda konungarna. När man byggde
+                        en pyramid började man med att bestämma läget.
+                    </p>
+                    <p>
+                        Cheopspyramiden är den största pyramiden. Den är 137 meter hög (ursprungligen 146 meter), d.v.s., den är nästan lika
+                        hög som Kaknästornet i Stockholm. På pyramidens yta skulle nio fotbollsplaner få rum.
+                    </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3 class="footer-head">Laborationsuppgift moment 03 för kursen DT211G, Frontend-baserad webbutveckling</h3>
+        <p class="footer-para">© Copyright Mohamed Abokashef, 2024</p>
+    </footer>
+</body>
+</html>
