@@ -1,18 +1,6 @@
 @use 'variables' as *;
 
 
-
-
-
-
-// @media (prefers-color-scheme: dark) {
-//     .parent {
-//         background: rgb(0, 0, 0);
-//         color: rgb(254, 254, 254);
-//         outline: 5px dashed #000;
-//     }
-// }
-
 @mixin theme-colors($light-theme: true) {
     @if $light-theme {
         background-color: $light-background;

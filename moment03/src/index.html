@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/scss/main.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
     <link rel="icon" href="./images/favicon.ico">
-    <script src="/src/js/main.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
     <title>Sass</title>
 </head>
 <body>
     <header>
         <section class="header-section">
-            <h2 class="logo">KASHEF</h2>
+            <h2 class="logo" onclick='window.location.href = "./index.html"' role="link">KASHEF</h2>
         </section>
         <button class="menuBtn open" id="open-menu">
             <span class="menu-icon">
@@ -22,7 +22,7 @@
             </span>
             <span class="menu-text">Meny</span>
         </button>
-        <nav id="nav-menu">
+        <nav id="nav-menu" role="navigation" aria-label="Main Menu">
             <button class="menuBtn close" id="close-menu">
                 <span class="menu-icon">
                     <span class="bars cross1"></span>
@@ -34,7 +34,7 @@
                 <li class="links"><a class="action" href="./index.html">Startsida</a></li>
                 <li class="links"><a href="#">Bilder</a></li>
                 <li class="links"><a href="#">Om proccing</a></li>
-                <li class="links"><a href="./sass.html" target="_blank">Om Sass</a></li>
+                <li class="links"><a href="./sidorna/sass.html" target="_blank">Om Sass</a></li>
                 <li class="links"><a href="#">kontakt</a></li>
             </ul>
         </nav>
