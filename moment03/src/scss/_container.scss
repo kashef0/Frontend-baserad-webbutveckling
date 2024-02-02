@@ -23,9 +23,7 @@
         // background-color: $bakgrundColor;
         // color: $colorText;
         .first_child {
-            width: 100%;
-            padding: 10px;
-            display: flex;
+            @extend %flex-styling;
 
         }
         .second_child {

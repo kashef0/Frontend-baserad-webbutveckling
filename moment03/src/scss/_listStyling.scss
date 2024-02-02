@@ -1,10 +1,11 @@
 @use 'variables' as *;
+@use 'mediaQuery';
+
 
 .organisering_list {
     align-items: center;
     .unorder_list, h2, p {
         line-height: $text-height;
-        width: 50%;
         padding: 10px;
         list-style-type: none;
         display: flex;
