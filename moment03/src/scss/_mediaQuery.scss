@@ -63,13 +63,13 @@
         white-space: nowrap;
     }
 
-    .unorder_list, h2, p {
+    .unorder_list, .rubrik2, .paragraph {
         width: 50%;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    .unorder_list, h2, p {
+    .unorder_list, .rubrik2, .paragraph {
         width: 60%;
     }
 }
@@ -91,7 +91,7 @@
         order: 2;
     }
 
-    .unorder_list, h2, p {
+    .unorder_list, .rubrik2, .paragraph {
         width: 70%;
     }
 }
@@ -101,24 +101,7 @@
     main {
         height: auto;
     }
-
-    .organisering_list {
-        align-items: center;
-
-        .unorder_list,
-        h2,
-        p {
-            line-height: $text-height;
-            width: 90%;
-            padding: 10px;
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-
-        }
-    }
-
-    .unorder_list, h2, p {
+    .unorder_list, .rubrik2, .paragraph {
         width: 90%;
     }
 }
