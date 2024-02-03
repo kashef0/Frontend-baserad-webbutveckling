@@ -13,8 +13,6 @@
     }
 }
 
-;
-
 @media (prefers-color-scheme: dark) {
     #container, #container > .rubrik {
         @include theme-colors($light-theme: false);
@@ -27,7 +25,6 @@
         @include theme-colors($light-theme: true);
     }
 }
-
 
 
 
