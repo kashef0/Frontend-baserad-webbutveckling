@@ -8,10 +8,7 @@
     align-items: center;
     .unorder_list, .rubrik2, .paragraph {
         line-height: $text-height;
-        padding: 10px;
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
+        @include list-styling;
     
         li {
             padding: 5px;
