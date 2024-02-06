@@ -8,6 +8,6 @@ footer {
     font-family: $main-font-family;
 
     .footer-head, .footer-para {
-        @include footer-styling;
+        @include footer-styling(.75em, .50em);
     }
 }

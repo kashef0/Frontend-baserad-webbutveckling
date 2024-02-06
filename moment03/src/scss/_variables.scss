@@ -32,15 +32,15 @@ $dark-text: #ffffff;
 
 
 
-@mixin list-styling {
-    padding: 10px;
+@mixin list-styling($padding_value) {
+    padding: $padding_value;
     list-style-type: none;
     display: flex;
     flex-direction: column;
 }
-@mixin footer-styling {
-    font-size: .75em;
+@mixin footer-styling($font_size_value, $padding_bo_value) {
+    font-size: $font_size_value;
     color: ghostwhite;
     text-align: center;
-    padding-bottom: .50em;
+    padding-bottom: $padding_bo_value;
 }
