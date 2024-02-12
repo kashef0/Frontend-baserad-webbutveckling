@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+footer {
+    background-color: $main-color;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    font-family: $main-font-family;
+
+    .footer-head, .footer-para {
+        @include footer-styling;
+    }
+}

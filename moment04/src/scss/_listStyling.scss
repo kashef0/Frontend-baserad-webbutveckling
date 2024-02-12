@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+
+
+.organisering_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .unorder_list, .rubrik2, .paragraph {
+        line-height: $text-height;
+        @include list-styling;
+    
+        li {
+            padding: 5px;
+            font-family: $main-font-family;
+            font-weight: 400;
+        }
+    }
+}
+
