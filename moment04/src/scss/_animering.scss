@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
-$start_translate: -900px; 
-$end_translate: 900px;
+$start_translate: -1000px; 
+$end_translate: 1000px;
 
 %animation_styling {
     position: absolute;
@@ -27,57 +27,8 @@ $end_translate: 900px;
 }
 
 
-// .ball-container {
-//     display: flex;
-//     align-items: end;
-//     justify-content: center;
-//     width: 100%;
-//     position: relative;
-//     overflow: hidden;
-//     image-rendering: pixelated;
 
-//     .car-container {
-//         width: 100%;
-        
-//         img {
-//             width: 100%;
-//             image-rendering: pixelated;
-//         }
-//     }
-
-//     .ball_animation {
-//         animation: left 5s infinite linear;
-//         @extend %animation_styling;
-//     }
-
-//     .ball_animation2 {
-//         animation: right 5s infinite linear;
-//         @extend %animation_styling;
-//         margin-bottom: 80px;
-//     }
-//     .ball_animation4 {
-//         @extend .ball_animation2;
-//         margin-right: 40em;
-//     }
-
-//     .ball_animation3 {
-//         animation: left 5s infinite linear;
-//         @extend %animation_styling;
-//         margin-right: 80em;
-//     }
-
-//     .car2 {
-//         transform: scaleX(-1);
-//     }
-
-//     .car, .car2,
-//     .car3, .car4 {
-//         width: 10rem;
-//     }
-// }
-
-
-.ball-container {
+.cars-container {
     display: flex;
     align-items: end;
     justify-content: center;
@@ -89,25 +40,25 @@ $end_translate: 900px;
     background-size: 100% 100%;
     image-rendering: pixelated;
 
-    .ball_animation {
+    .cars_animation {
         animation: left 5s infinite ease-out;
         @extend %animation_styling;
     }
 
-    .ball_animation2 {
-        animation: right 5s infinite ease-in;
+    .cars_animation2 {
+        animation: right 5s 0.5s infinite ease-in;
         @extend %animation_styling;
         margin-bottom: 80px;
     }
-    .ball_animation4 {
-        animation: right 5s infinite ease-out;
+    .cars_animation4 {
+        animation: right 5s 1s infinite ease-out;
         @extend %animation_styling;
         margin-bottom: 80px;
         
     }
 
-    .ball_animation3 {
-        animation: left 5s infinite ease-in;
+    .cars_animation3 {
+        animation: left 5s 1s infinite ease-in;
         @extend %animation_styling;
     }
 
@@ -138,11 +89,115 @@ $end_translate: 900px;
 
 @keyframes right {
     0%, 100% {
-        transform: translate(900px, 0);
+        transform: translate($end_translate, 0);
     }
 
     100% {
-        transform: translate(-900px, 0);
+        transform: translate($start_translate, 0);
     }
 
+}
+
+.beach {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .carb-container {
+        position: absolute;
+        top: 50px;
+        
+    }
+
+    .carb_img {
+        width: 40px;
+        animation: left 15s infinite ease-out,
+        carb 15s infinite linear;
+    }
+
+    .beach_img {
+        width: 100%;
+        height: 10em;
+        border-top: 6px solid rgb(67, 64, 62);
+    }
+}
+
+.waves {
+    position: relative;
+        width: 100%;
+        height: 10em;
+        overflow: hidden;
+        bottom: 10px;
+        background-color: #4779f7;
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5em;
+            background: url(/src/images/wave.png);
+            background-size: 100vw 5em;
+            image-rendering: pixelated;
+        
+        }
+
+        .wave1 {
+            animation: sea 20s 0s linear infinite;
+            z-index: 15;
+            opacity: .9;
+            bottom: 0;
+            
+        }
+        .wave2 {
+            animation: sea1 15s -5s linear infinite;
+            z-index: 10;
+            opacity: .7;
+            bottom: 10px;
+        }
+        .wave3 {
+            animation: sea 10s -2s linear infinite;
+            z-index: 5;
+            opacity: .4;
+            bottom: 15px;
+        }
+        
+        .wave4 {
+            animation: sea1 5s -5s linear infinite;
+            z-index: 1;
+            opacity: .5;
+            bottom: 20px;
+        }
+}
+
+
+@keyframes carb {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translate(900px, 110px);
+    }
+}
+
+
+@keyframes sea {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100vw;
+    }
+}
+
+@keyframes sea1 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -100vw;
+    }
 }

@@ -43,23 +43,63 @@
         <section id="container">
             <h1 class="rubrik_animering">Grafiska effekter med CSS</h1>
         </section>
-        <div class="ball-container">
-            <!-- <picture class="car-container">
-            <source srcset="/src/images/street_try.png?as=avif&width=800" type="image/avif">
-            <source srcset="/src/images/street_try.png??as=webp&width=800" type="image/webp">
-            <img src="/src/images/street_try.png??width=300" alt="Cheopspyramiden">
-            </picture> -->
-            <div class="ball_animation">
+        <div class="cars-container">
+            <audio id="sound" autoplay loop>
+                <source src="/src/images/traffic.mp3" type="audio/mpeg">
+                Din webbläsare stöder inte ljudelementet.
+            </audio>
+            <div class="cars_animation">
                 <picture class="car-container">
                     <source srcset="/src/images/car.png?as=avif" type="image/avif">
                     <source srcset="/src/images/car.png?as=webp" type="image/webp">
-                    <img class="car" src="/src/images/car.png??width=300" alt="Cheopspyramiden">
+                    <img class="car" src="/src/images/car.png?width=300" alt="grå bil">
                 </picture></div>
-            <div class="ball_animation3"><img class="car3" src="/src/images/car3.png" alt=""></div>
-            <div class="ball_animation2"><img class="car2" src="/src/images/car2.png" alt=""></div>
-            <div class="ball_animation4"><img class="car4" src="/src/images/car4.png" alt=""></div>
+            <div class="cars_animation3">
+                <picture class="car-container">
+                    <source srcset="/src/images/car3.png?as=avif" type="image/avif">
+                    <source srcset="/src/images/car3.png?as=webp" type="image/webp">
+                    <img class="car3" src="/src/images/car3.png?width=300" alt="svart bil">
+                </picture>
+            </div>
+            <div class="cars_animation2">
+                <picture class="car-container">
+                    <source srcset="/src/images/car2.png?as=avif" type="image/avif">
+                    <source srcset="/src/images/car2.png?as=webp" type="image/webp">
+                    <img class="car2" src="/src/images/car2.png?width=300" alt="röd bil">
+                </picture>
+            </div>
+            <div class="cars_animation4">
+                <picture class="car-container">
+                    <source srcset="/src/images/car4.png?as=avif" type="image/avif">
+                    <source srcset="/src/images/car4.png?as=webp" type="image/webp">
+                    <img class="car4" src="/src/images/car4.png?width=300" alt="vit bil">
+                </picture>
+            </div>
         </div>
-        
+        <div class="beach">
+            <picture class="carb-container">
+                <source srcset="/src/images/carb.png?as=avif" type="image/avif">
+                <source srcset="/src/images/carb.png?as=webp" type="image/webp">
+                <img class="carb_img" src="/src/images/carb.png?width=300" alt="vit bil">
+            </picture>
+            <picture>
+                <source srcset="/src/images/beach.png?as=avif" type="image/avif">
+                <source srcset="/src/images/beach.png?as=webp" type="image/webp">
+                <img class="beach_img" src="/src/images/beach.png?width=300" alt="vit bil">
+            </picture>
+        </div>
+        <div class="waves">
+            <audio id="wave_sound" autoplay loop>
+                <source src="/src/images/wane_sound.mp3" type="audio/mpeg">
+                Din webbläsare stöder inte ljudelementet.
+            </audio>
+            <div class="wave">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+            </div>
+        </div>
     </main>
     <footer>
         <h3 class="footer-head">Laborationsuppgift moment 04 för kursen DT211G, Frontend-baserad webbutveckling</h3>
@@ -69,8 +109,3 @@
 </html>
 
 
-<!-- <picture class="car-container">
-            <source srcset="/src/images/car3.png?as=avif" type="image/avif">
-            <source srcset="/src/images/car3.png??as=webp" type="image/webp">
-            <img class="car3" src="/src/images/car3.png??width=300" alt="Cheopspyramiden">
-    </picture> -->
