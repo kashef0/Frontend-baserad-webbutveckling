@@ -1,1 +1,3 @@
+<<<<<<< HEAD
 # Frontend-baserad-webbutveckling
+=======
