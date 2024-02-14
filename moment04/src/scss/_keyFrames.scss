@@ -46,10 +46,13 @@ $end_translate: 1000px;
 
 @keyframes carb {
     0% {
-        transform: translateY(0);
+        transform: translate(-40, 0);
+    }
+    50% {
+        transform: translate(450px, 55px);
     }
     100% {
-        transform: translate(900px, 110px);
+        transform: translate(900px, 105px);
     }
 }
 

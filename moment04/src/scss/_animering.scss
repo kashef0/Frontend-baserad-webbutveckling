@@ -1,6 +1,11 @@
 @use 'variables' as *;
 @use 'keyFrames';
 
+%scale_img {
+    transform: scale(5);
+    cursor: pointer;
+}
+
 
 %animation_styling {
     position: absolute;
@@ -12,10 +17,6 @@
     
     animation: shadow_text 2s infinite alternate;
 }
-
-
-
-
 
 
 .cars-container {
@@ -59,11 +60,14 @@
     .car, .car2,
     .car3, .car4 {
         width: 6.25em;
+        transition: width 2s, transform 2s;
+    }
+
+    .change-size:hover {
+        width: 1.5em;
+        @extend %scale_img;
     }
 }
-
-
-
 
 
 
@@ -80,11 +84,16 @@
     }
 
     .carb_img {
-        width: 40px;
+        width: 3em;
         animation: left 15s infinite ease-out,
-        carb 15s infinite linear;
+        carb 15s infinite alternate;
+        transition: width 2s, transform 2s;
     }
 
+    .carb_img:hover {
+        width: 5em;
+        @extend %scale_img;
+    }
     .beach_img {
         width: 100%;
         height: 10em;
