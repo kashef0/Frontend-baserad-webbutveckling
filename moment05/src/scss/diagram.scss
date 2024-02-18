@@ -1,0 +1,41 @@
+
+
+#main_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .diagramBox  {
+        position: relative;
+        // margin: auto;
+        height: 600px;
+        max-width: 700px;
+        width: 100%;
+        padding: 1.2em;
+    }
+    
+    .diagramBox_two  {
+        display: flex;
+        justify-content: center;
+        max-width: 800px;
+        width: 100%;
+        height: 600px !important;
+        padding: 20px;
+        
+    }
+    
+}
+
+
+@media only screen and (max-width: 750px) {
+    .diagramBox {
+        height: 400px;
+        width: 90%;
+        
+    }
+    .diagramBox_two  {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+}

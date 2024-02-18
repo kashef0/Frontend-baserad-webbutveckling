@@ -1,0 +1,20 @@
+{
+  "name": "moment05",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel --open chrome",
+    "build": "build parcel"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "author": "Mohamed Abokashef",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0",
+    "parcel-plugin-concat": "^0.2.3",
+    "sharp": "^0.31.3"
+  }
+  
+}

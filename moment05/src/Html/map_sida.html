@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <link rel="icon" href="/src/images/favicon.ico">
+    <script src="/src/Js/main.js" type="module"></script>
+    <title>maps</title>
+</head>
+<body>
+    <header>
+        <section class="header-section">
+            <h2 class="logo" tabindex="0" onclick='window.location.href = "./index.html"'><img src="/src/images/logo.svg" alt="egypt logo"></h2>
+        </section>
+        <button class="menuBtn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <nav id="nav-menu">
+            <button class="menuBtn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">stäng</span>
+            </button>
+            <ul>
+                <li class="links"><a href="/src/index.html">Startsida</a></li>
+                <li class="links"><a href="/src/Html/animering.html">animering</a></li>
+                <li class="links"><a href="#">Om proccing</a></li>
+                <li class="links"><a class="action" href="#">Om Sass</a></li>
+                <li class="links"><a href="#">karta</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="container" class="dark-theme">
+            <h1 class="rubrik">maps</h1>
+            <div class="parent">
+                <input id="maps" type="text" placeholder="skriva adressen du säker efter">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3 class="footer-head">Laborationsuppgift moment 05 för kursen DT211G, Frontend-baserad webbutveckling</h3>
+        <p class="footer-para">© Copyright Mohamed Abokashef, 2024</p>
+    </footer>
+</body>
+</html>

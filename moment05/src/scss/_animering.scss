@@ -1,0 +1,152 @@
+@use 'variables' as *;
+@use 'keyFrames';
+
+%scale_img {
+    transform: scale(5);
+    cursor: pointer;
+}
+
+
+%animation_styling {
+    position: absolute;
+    margin-bottom: 10px;
+    image-rendering: pixelated;
+}
+
+.rubrik_animering {
+    
+    animation: shadow_text 2s infinite alternate;
+}
+
+
+.cars-container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    height: 20em;
+    overflow: hidden;
+    background-image: url(/src/images/street2.png);
+    background-size: 100% 100%;
+    image-rendering: pixelated;
+
+    .cars_animation {
+        animation: left 5s infinite ease-out;
+        @extend %animation_styling;
+    }
+
+    .cars_animation2 {
+        animation: right 5s 0.5s infinite ease-in;
+        @extend %animation_styling;
+        margin-bottom: 80px;
+    }
+    .cars_animation4 {
+        animation: right 5s 1s infinite ease-out;
+        @extend %animation_styling;
+        margin-bottom: 80px;
+        
+    }
+
+    .cars_animation3 {
+        animation: left 5s 1s infinite ease-in;
+        @extend %animation_styling;
+    }
+
+    .car2 {
+        transform: scaleX(-1);
+    }
+
+    .car, .car2,
+    .car3, .car4 {
+        width: 6.25em;
+        transition: width 2s, transform 2s;
+    }
+
+    .change-size:hover {
+        width: 1.5em;
+        @extend %scale_img;
+    }
+}
+
+
+
+.beach {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .carb-container {
+        position: absolute;
+        top: 50px;
+        
+    }
+
+    .carb_img {
+        width: 3em;
+        animation: left 15s infinite ease-out,
+        carb 15s infinite alternate;
+        transition: width 2s, transform 2s;
+    }
+
+    .carb_img:hover {
+        width: 5em;
+        @extend %scale_img;
+    }
+    .beach_img {
+        width: 100%;
+        height: 10em;
+        border-top: 6px solid rgb(67, 64, 62);
+    }
+}
+
+.waves {
+    position: relative;
+        width: 100%;
+        height: 10em;
+        overflow: hidden;
+        bottom: 10px;
+        background-color: #4779f7;
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5em;
+            background: url(/src/images/wave.png);
+            background-size: 100vw 5em;
+            image-rendering: pixelated;
+        
+        }
+
+        .wave1 {
+            animation: sea 20s 0s linear infinite;
+            z-index: 15;
+            opacity: .9;
+            bottom: 0;
+            
+        }
+        .wave2 {
+            animation: sea1 15s -5s linear infinite;
+            z-index: 10;
+            opacity: .7;
+            bottom: 10px;
+        }
+        .wave3 {
+            animation: sea 10s -2s linear infinite;
+            z-index: 5;
+            opacity: .4;
+            bottom: 15px;
+        }
+        
+        .wave4 {
+            animation: sea1 5s -5s linear infinite;
+            z-index: 1;
+            opacity: .5;
+            bottom: 20px;
+        }
+}
+
+
