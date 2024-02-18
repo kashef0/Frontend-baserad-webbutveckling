@@ -1,7 +1,8 @@
 "use strict";
-// import "./map_kod.js";
+
 import "./Stabeldiagram .js";
 import "./Cirkeldiagram .js";
+import "./map_kod.js";
 
 
 

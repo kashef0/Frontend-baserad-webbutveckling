@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/scss/main.scss">
     <link rel="icon" href="/src/images/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="/src/Js/main.js" type="module"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <title>maps</title>
 </head>
 <body>
@@ -33,20 +35,26 @@
             <ul>
                 <li class="links"><a href="/src/index.html">Startsida</a></li>
                 <li class="links"><a href="/src/Html/animering.html">animering</a></li>
-                <li class="links"><a href="#">Om proccing</a></li>
-                <li class="links"><a class="action" href="#">Om Sass</a></li>
-                <li class="links"><a href="#">karta</a></li>
+                <li class="links"><a href="/src/Html/diagram.html">diagram</a></li>
+                <li class="links"><a href="/src/Html/sass.html">Om Sass</a></li>
+                <li class="links"><a class="action" href="#">karta</a></li>
                 
             </ul>
         </nav>
     </header>
     <main>
-        <div id="container" class="dark-theme">
-            <h1 class="rubrik">maps</h1>
-            <div class="parent">
-                <input id="maps" type="text" placeholder="skriva adressen du säker efter">
+        <div class="map_container">
+            <div class="input-holder">
+                <label for="platsInput">Ange plats:</label>
+                <input type="text" id="platsInput" class="inputfield" placeholder="Mittuniversitetet, Holmgatan, 852 30 Sundsvall, Sweden">
+                <button type="button" id="platsBtn" class="myBTN">sök plats</button>
             </div>
+            
+            <div id="error"></div>
+            <div id="map"></div>
         </div>
+        
+
     </main>
     <footer>
         <h3 class="footer-head">Laborationsuppgift moment 05 för kursen DT211G, Frontend-baserad webbutveckling</h3>

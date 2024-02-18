@@ -1,38 +1,47 @@
 "use strict";
 
-// const url = "https://studenter.miun.se/~mallar/dt211g/";
 
-// async function getData() {
-//     let number = 0;
-//     try {
-//         const response = await fetch(url);
-//         let programData = await response.json();
 
-//         programData.find(({admissionRound, type}) => admissionRound === "HT2023" && type === "Kurs");
-//         console.table(programData);
+let map;
 
-//         programData.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+function initMap() {
+    if (!map) {
+        map = L.map('map').setView([62.3863, 17.3066], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+    }
+}
 
-//         const greatestSixNumbers = programData.slice(0, 6);
+async function findLocation() {
+    const locationInput = document.getElementById('platsInput').value;
+    
+    const map_url = `https://geocode.search.hereapi.com/v1/geocode?q=${encodeURIComponent(locationInput)}&limit=1&apiKey=XMJPgVeLk2rkOo1yR0svyXc1OFpOdNIpXmHTAVyJph8`;
 
-//         programData.forEach(element => {
-            
+    try {
+        const response = await fetch(map_url);
+        const data = await response.json();
 
-//             if (element.applicantsTotal > number) {
-//                 number += element.applicantsTotal;
-//             }
+        if (data.items && data.items.length > 0) {
+            const location = data.items[0].position;
+            map.setView([location.lat, location.lng], 15);
 
-//             if (element.type === "kurs" && element.admissionRound === "HT2023") {
+            const marker = L.marker([location.lat, location.lng]).addTo(map);
 
-//             }
-//            Logga elementets namn
-//         });
+            marker.bindPopup('plats du söker');
 
-//         console.log(programData);
-//     } catch (error) {
-//         console.error(error); 
-//     }
-// }
+            marker.openPopup();
 
-// getData();
+        } else {
+            document.getElementById("error").innerHTML = "<p>Platsen hittades inte!</p>";
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById("error").innerHTML = "<p>Ett fel uppstod när platsdata skulle hämtas.!</p>";
+    }
+}
+
+document.getElementById('platsBtn').addEventListener('click', findLocation);
+window.onload = initMap;
+
 
