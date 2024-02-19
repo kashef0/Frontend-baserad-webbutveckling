@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel --open chrome",
-    "build": "build parcel"
+    "build": "parcel build"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "author": "Mohamed Abokashef",
