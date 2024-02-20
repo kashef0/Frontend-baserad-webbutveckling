@@ -13,3 +13,5 @@ const getResponsiveFont = (widthNumber) => {
         };
     };
 };
+
+getResponsiveFont();
