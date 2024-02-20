@@ -1,6 +1,8 @@
 "use strict";
-
+import { getResponsiveFont } from './enhet_omvandling.js';
 const url = "https://studenter.miun.se/~mallar/dt211g/";
+
+getResponsiveFont();
 
 async function getData() {
     const ctx = document.getElementById('ct-chart').getContext('2d');
@@ -19,23 +21,7 @@ async function getData() {
         filteredData.sort((num1, num2) => num2.applicantsTotal - num1.applicantsTotal);
         const resultNumber = filteredData.slice(0, 6);
 
-        const sum = resultNumber.reduce((total, current) => total + parseInt(current.applicantsTotal), 0);
-        
-        const getResponsiveFont = (widthNumber) => {
-            return function (context) {
-                var width = context.chart.width;
-                var sizeInEm = width / widthNumber;
-                var sizeInRem = sizeInEm / 16; // ändra till rem enhet
-        
-                return {
-                    weight: 'bold',
-                    size: sizeInRem
-                };
-            };
-        };
-        
-        const responsiveFont = getResponsiveFont(2);
-        
+        const sum = resultNumber.reduce((total, current) => total + parseInt(current.applicantsTotal), 0);     
         const chartConfig = {
             type: 'bar',
             data: {
@@ -76,16 +62,7 @@ async function getData() {
                             autoSkip: false, // Inaktivera automatisk överhoppning av ticks
                             maxRotation: 0, // inte Vrid ticks till 0 grader
                             maxTicksLimit: 1, // Begränsa antalet ticks som visas
-                            font: function (context) {
-                                var width = context.chart.width;
-                                var sizeInEm = width / 3;
-                                var sizeInRem = sizeInEm / 16; // ändra till rem enhet
-
-                                return {
-                                    weight: 'bold',
-                                    size: sizeInRem
-                                };
-                            },
+                            font: getResponsiveFont(3)
                         }
                     },
                     y: {
@@ -101,11 +78,11 @@ async function getData() {
                 plugins: {
                     legend: {
                         labels: {
-                            font: responsiveFont,
+                            font: getResponsiveFont(2),
                         }
                     },
                     subtitle: {
-                        font: responsiveFont,
+                        font: getResponsiveFont(2),
                         display: true,
                         text: 'statistik över de 6 mest sökta kurserna på Mittuniverstetet, HT23'
                     }
@@ -122,5 +99,4 @@ async function getData() {
     
 }
 getData();
-
 

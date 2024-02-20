@@ -1,8 +1,8 @@
 "use strict";
-
+import { getResponsiveFont } from './enhet_omvandling.js';
 const url = "https://studenter.miun.se/~mallar/dt211g/";
 
-
+getResponsiveFont();
 
 async function getData_cirkel() {
     const ctx = document.getElementById('chart').getContext('2d');
@@ -22,22 +22,8 @@ async function getData_cirkel() {
         const resultNumber = filteredData_cirkel.slice(0, 5);
 
         const sum = resultNumber.reduce((total, current) => total + parseInt(current.applicantsTotal), 0);
-        const getResponsiveFont = (widthNumber) => {
-            return function (context) {
-                var width = context.chart.width;
-                var sizeInEm = width / widthNumber;
-                var sizeInRem = sizeInEm / 16; // ändra till rem enhet
-        
-                return {
-                    weight: 'bold',
-                    size: sizeInRem
-                };
-            };
-        };
-        
-        const responsiveFont = getResponsiveFont(2);
 
-        new Chart(ctx, {
+        const chartConfig = {
             type: 'doughnut',
             data: {
             labels: resultNumber.map(el => el.name),
@@ -69,20 +55,27 @@ async function getData_cirkel() {
             }]
             },
             options: {
-                
+                maintainAspectRatio: false,
                 layout: {
                     padding: 20
                 },
                 plugins: {
+                    legend: {
+                        labels: {
+                            font: getResponsiveFont(3.5),
+                        }
+                    },
                     subtitle: {
-                        font: responsiveFont,
+                        font: getResponsiveFont(2),
                         display: true,
                         text: 'statistik över de 5 mest sökta programmen på Mittuniverstetet, HT23'
                     },
                 }
                 
             }
-            });
+            };
+
+        new Chart(ctx, chartConfig);
         
     } catch (error) {
         document.getElementById("error").innerHTML = "<p>Något gick fel, prova igen senare!</p>";
