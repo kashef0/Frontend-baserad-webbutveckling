@@ -102,5 +102,17 @@
     .unorder_list, .rubrik2, .paragraph {
         width: 90%;
     }
-        
+    
+    .map_container {
+
+        .input-holder{
+            width: 100% !important;
+        }  
+
+        #map {
+            width: 100%;
+        }
+    }
+
+    
 }
