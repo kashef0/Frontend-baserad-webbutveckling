@@ -1,6 +1,7 @@
 "use strict";
 
 let map;
+let marker;
 
 function initMap() {
     if (!map) {
@@ -23,12 +24,16 @@ async function findLocation() {
         if (data.items && data.items.length > 0) {
             const location = data.items[0].position;
             map.setView([location.lat, location.lng], 15);
+            
+            if (marker) {
+                map.removeLayer(marker);
+            }
 
-            const marker = L.marker([location.lat, location.lng]).addTo(map);
+            marker = L.marker([location.lat, location.lng]).addTo(map);
 
             marker.bindPopup('plats du söker');
-
             marker.openPopup();
+        
 
         } else {
             document.getElementById("error").innerHTML = "<p>Platsen hittades inte!</p>";
@@ -41,5 +46,4 @@ async function findLocation() {
 
 document.getElementById('platsBtn').addEventListener('click', findLocation);
 window.onload = initMap;
-
 
