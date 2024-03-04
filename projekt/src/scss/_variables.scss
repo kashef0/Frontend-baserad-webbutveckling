@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+
+
+$main-color: #2b2e35;
+$hover-color: darken(#c42b2b, 5%);
+$former-backgroundColor: darken(#701919bd, 2%);
+$bars-color: #2C363F;
+$colorText: #036;
+$bakgrundColor: lighten(rgb(220, 218, 215), 10%);
+$main-font-family: 'Nanum Gothic', sans-serif;
+$second-font-family: 'Roboto', sans-serif;
+$main-font-size: 2em;
+$second-font-size: 1.3em;
+$text-height: 1.4em;
+
+$gold_Color: lighten(rgb(215, 182, 78), 5%);
+
+
+$light-background: lighten(rgb(220, 218, 215), 10%);
+$light-text: #036;
+$dark-background: lighten(#000000, 12%);
+$dark-text: #ffffff;
+
+
+
+%flex-styling {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+}
+
+
+
+@mixin list-styling {
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+@mixin footer-styling {
+    font-size: .75em;
+    color: ghostwhite;
+    text-align: center;
+    padding-bottom: .50em;
+}

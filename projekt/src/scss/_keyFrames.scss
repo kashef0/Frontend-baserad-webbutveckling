@@ -1,0 +1,79 @@
+@use 'variables' as *;
+
+$start_translate: -1000px; 
+$end_translate: 1000px;
+
+// -------------------Animation för rubrik------------------
+
+@keyframes shadow_text {
+    from {
+        text-shadow: 0 0 3px lighten(#2b2e35da, 10%), 2px 2px 5px lighten(#2b2e35c6, 10%), 4px 4px 7px lighten(#2b2e35c9, 10%), 6px 6px 9px  lighten(#2b2e3584, 10%), 8px 8px 11px  lighten(#2b2e3500, 10%), 10px 10px 13px lighten(#2b2e355b, 10%), 12px 12px 15px  lighten(#2b2e355f, 10%), 14px 14px 17px lighten(#2b2e3529, 10%);
+    }
+    to {
+        text-shadow: 8px 8px 9px darken(#adadad, 20%), 10px 12px 7px darken(#a3a3a3, 20%), 12px 16px 5px darken(#999999, 20%);
+    }
+
+}
+
+// -------------------Animation för bilar------------------
+
+@keyframes left {
+    0%, 100% {
+        transform: translate($start_translate, 0);
+    }
+
+    100% {
+        transform: translate($end_translate, 0);
+    }
+
+}
+
+
+@keyframes right {
+    0%, 100% {
+        transform: translate($end_translate, 0);
+    }
+
+    100% {
+        transform: translate($start_translate, 0);
+    }
+
+}
+
+
+// -------------------Animation för carb------------------
+
+
+@keyframes carb {
+    0% {
+        transform: translate(-40, 0);
+    }
+    50% {
+        transform: translate(450px, 55px);
+    }
+    100% {
+        transform: translate(900px, 105px);
+    }
+}
+
+// -------------------Animation för havet------------------
+
+@keyframes sea {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100vw;
+    }
+}
+
+@keyframes sea1 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -100vw;
+    }
+}

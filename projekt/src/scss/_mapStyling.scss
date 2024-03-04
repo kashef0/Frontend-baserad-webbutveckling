@@ -1,0 +1,47 @@
+
+.map_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+    label{
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        margin-right: .25em;
+    }
+
+    .input-holder {
+        display: flex;
+        width: 50%;
+    }
+
+    .myBTN {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 50%;
+    }
+
+    .inputfield {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+
+    }
+}
+
+
+
+#map {
+    height: 400px;
+    width: 50%;
+    border: 2px solid black;
+    z-index: 0;
+}
+
+
+
+
+
