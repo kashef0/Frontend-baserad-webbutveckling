@@ -1,9 +1,6 @@
 # Frontend-baserad-webbutveckling
 =======
 
-# Frontend-baserad-webbutveckling
-=======
-
 # Projektbeskrivning: Film- och TV-serievisningssida med översättning
 
 ## Översikt
