@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 
-
+// $header-background-color: darken(#032030, 3%);
+$header-background-color: darken(#395886, 25%);
 $main-color: #2b2e35;
 $hover-color: darken(#c42b2b, 5%);
 $former-backgroundColor: darken(#701919bd, 2%);
@@ -22,7 +23,6 @@ $light-background: lighten(rgb(220, 218, 215), 10%);
 $light-text: #036;
 $dark-background: lighten(#000000, 12%);
 $dark-text: #ffffff;
-
 
 
 %flex-styling {

@@ -7,10 +7,15 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    
+    background-image: url(/src/images/movie-background-collage.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-attachment:fixed;
 }
+
 
 main {
     min-height: 100vh;
+    padding-top: 150px;
 }

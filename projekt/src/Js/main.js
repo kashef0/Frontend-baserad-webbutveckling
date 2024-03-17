@@ -2,9 +2,10 @@
 
 
 import "./navMenu.js";
-import "./anime.js";
+import "./scrollFunction.js";
+import "./movie.js";
 import "./apiKey.js";
-// import "./map_kod.js";
+
 
 
 

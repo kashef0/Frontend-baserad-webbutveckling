@@ -1,6 +1,6 @@
 "use strict";
 
-import { translationApiKey as translationApiKey, apiKey as apiKey } from './apiKey.js';
+import { apiKey as apiKey } from './apiKey.js';
 const { Translate } = require('@google-cloud/translate').v2;
 require('dotenv').config();
 
@@ -18,7 +18,9 @@ async function fetchData(url, page) {
 // Hämta och visa medieinnehåll baserat på anropade sorteringsURL och kvantitet 
 async function getAllMedia(sortUrl, quantity) {
     let movieResultsAL = document.getElementById("movieResults");
-    
+    if (quantity > 0) {
+        movieResultsAL.innerHTML = '';
+    }
     try {
         let allMediaContent = "";
 
@@ -33,10 +35,11 @@ async function getAllMedia(sortUrl, quantity) {
                     <div class="data_container">
                         <figure class="img_container">
                             <span class="vote">${media.vote_average.toFixed(1)}</span>
-                            <span class="episodes">${media.number_of_episodes || ''}</span>
-                            <img src="https://image.tmdb.org/t/p/w500/${media.poster_path}?width=300" alt="${media.original_title}">
+                            <img src="https://image.tmdb.org/t/p/w500/${media.poster_path}?width=300"  alt="${media.original_title}" data-lightbox="image-${index}">
                             <section class="data">
                                 <h2>${media.title || media.name}</h2>
+                                <span class="original_language">${media.original_language || ''}</span>
+                                <hr>
                                 <p><strong>Description:</strong> ${media.overview || 'Beskrivning saknas'}</p>
                                 <form class="languageOptions" method="POST">
                                 <label for="languageSelect_${index}">välj språk:</label>
@@ -45,7 +48,7 @@ async function getAllMedia(sortUrl, quantity) {
                                     <option value="sv">Svenska</option>
                                     <option value="fr">Franska</option>
                                     <option value="es">Spanska</option>
-                                    <option value="it">italinska</option>
+                                    <option value="it">Italinska</option>
                                     <option value="ar">Arabiska</option>
                                 </select>
                                 <button type="button" data-index="${index}">Översätt beskrivning</button>
@@ -68,17 +71,17 @@ async function getAllMedia(sortUrl, quantity) {
     } catch (error) {
         console.error('Error:', error);
     }
-    
-
 }
 // Sök efter filmer eller TV shows baserat på användarinmatning
-async function searchMovieOrShow() {
+async function searchMovieOrShow(event) {
+    event.preventDefault(); 
     let filtering = [];
     const movieName = document.getElementById('movieInput').value;
-
+    console.log(movieName);
     const movieResponse = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`);
+    
     const movieData = await movieResponse.json();
-
+    
     if (Array.isArray(movieData.results)) {
         filtering = movieData.results.filter(movie =>
             movie.title.toLowerCase().includes(movieName.toLowerCase())
@@ -94,14 +97,15 @@ async function searchMovieOrShow() {
             <div class="data_container">
                 <figure class="img_container">
                     <span class="vote">${media.vote_average.toFixed(1)}</span>
-                    <span class="episodes">${media.number_of_episodes || ''}</span>
-                    <img src="https://image.tmdb.org/t/p/w500/${media.poster_path}?width=300" alt="${media.original_title}">
+                    <img src="https://image.tmdb.org/t/p/w500/${media.poster_path}?width=300" alt="${media.original_title}" data-lightbox="image-${index}>
                     <section class="data">
                         <h2>${media.title || media.name}</h2>
+                        <span class="original_language">${media.original_language || ''}</span>
+                        <hr>
                         <p><strong>Description:</strong> ${media.overview || description}</p>
                         <form class="languageOptions" method="POST">
                         <label for="languageSelect_${index}">välj språk:</label>
-                            <select class="languageSelect" id="languageSelect_${index}">
+                        <select class="languageSelect" id="languageSelect_${index}">
                             <option value="En">Engelska</option>
                             <option value="Sv">Svenska</option>
                             <option value="Fr">Franska</option>
@@ -126,7 +130,7 @@ quantity.addEventListener('change', changeQuantity);
 
 function changeQuantity() {
     let quantityValue = document.getElementById("quantity").value;
-    let sortingData = document.getElementById('typeSelect').value;
+    let sortingData = document.getElementById("typeSelect").value;
     let sortUrl;
 
     if (sortingData === "movie") {
@@ -134,7 +138,7 @@ function changeQuantity() {
     } else {
         sortUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&sort_by=popularity.desc`;
     }
-
+    
     getAllMedia(sortUrl, quantityValue);
 }
 
@@ -146,7 +150,7 @@ movieTypeSelector.addEventListener('change', sort_by);
 let sortingData;
 async function sort_by() {
     sortingData = document.getElementById('typeSelect').value;
-    console.log("sortingData");
+    // console.log("sortingData");
     let sortUrl;
     if(sortingData === "movie") {
         sortUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
@@ -156,9 +160,11 @@ async function sort_by() {
     getAllMedia(sortUrl, 1);
 }
 
+
 // Händelselyssnare för sökmotor när användaren skriver film eller tv namn
 let MyBtn = document.getElementById("Btn");
 MyBtn.addEventListener('click', searchMovieOrShow);
+
 
 sort_by();
 
@@ -195,7 +201,7 @@ async function translator(index) {
     // Ersätt den ursprungliga beskrivningen med den översatta
     descriptionElement.textContent = `${translation}`;
 
-    console.log(descriptionElement);
+    // console.log(descriptionElement);
 }
 
 // Ändra din befintliga kod för att inkludera en klickhändelse för översättningsknapp
@@ -208,36 +214,3 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Update your HTML generation code to include the data-index attribute in the button
-// Add data-index="${index}" to the button in the HTML template
-// Example:
-// <button type="button" data-index="${index}">Översätt beskrivning</button>
-
-
-
-// const {Translate} = require('@google-cloud/translate').v2;
-// require('dotenv').config();
-
-// const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
-
-// const translate = new Translate({
-//     Credential: CREDENTIALS,
-//     projectId: CREDENTIALS.translate-projrct
-// });
-
-// const detectLanguage = async (text) => {
-//     try {
-//         let response = await translate.detect(text);
-//         return response[0].language;
-//     } catch (error) {
-//         console.log(`Error at detectlanguage--- ${error}`);
-//         return 0;
-//     }
-// }
-// detectLanguage('today is monday')
-//         .then((res) => {
-//             console.log(res);
-//         })
-//         .catch((err) => {
-//             console.log(error);
-//         })
