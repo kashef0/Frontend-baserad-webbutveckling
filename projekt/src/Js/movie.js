@@ -1,6 +1,9 @@
 "use strict";
 
 import { apiKey as apiKey } from './apiKey.js';
+import { sort_by } from './sortering_fun.js';
+import { searchMovieOrShow } from './search_fun.js';
+import { changeQuantity } from './quantity_fun.js'; 
 const { Translate } = require('@google-cloud/translate').v2;
 require('dotenv').config();
 
@@ -72,104 +75,25 @@ async function getAllMedia(sortUrl, quantity) {
         console.error('Error:', error);
     }
 }
-// Sök efter filmer eller TV shows baserat på användarinmatning
-async function searchMovieOrShow(event) {
-    event.preventDefault(); 
-    let filtering = [];
-    const movieName = document.getElementById('movieInput').value;
-    console.log(movieName);
-    const movieResponse = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`);
-    
-    const movieData = await movieResponse.json();
-    
-    if (Array.isArray(movieData.results)) {
-        filtering = movieData.results.filter(movie =>
-            movie.title.toLowerCase().includes(movieName.toLowerCase())
-        );
-
-        // console.log(filtering);
-        // Visa filmresultat
-        const movieResultsDiv = document.getElementById('movieResults');
-        movieResultsDiv.innerHTML = '';
-        filtering.forEach((media, index) => {
-            const description = media.overview || 'Beskrivning saknas';
-            movieResultsDiv.innerHTML += `
-            <div class="data_container">
-                <figure class="img_container">
-                    <span class="vote">${media.vote_average.toFixed(1)}</span>
-                    <img src="https://image.tmdb.org/t/p/w500/${media.poster_path}?width=300" alt="${media.original_title}" data-lightbox="image-${index}>
-                    <section class="data">
-                        <h2>${media.title || media.name}</h2>
-                        <span class="original_language">${media.original_language || ''}</span>
-                        <hr>
-                        <p><strong>Description:</strong> ${media.overview || description}</p>
-                        <form class="languageOptions" method="POST">
-                        <label for="languageSelect_${index}">välj språk:</label>
-                        <select class="languageSelect" id="languageSelect_${index}">
-                            <option value="En">Engelska</option>
-                            <option value="Sv">Svenska</option>
-                            <option value="Fr">Franska</option>
-                            <option value="Sp">Spanska</option>
-                            <option value="it">Italinska</option>
-                            <option value="ar">Arabiska</option>
-                        </select>
-                        <button type="button" data-index="${index}">Översätt beskrivning</button>
-                        </form>
-                    </section>
-                </figure>
-            </div>
-            `;
-        });
-    }
-}
 
 
 // Händelselyssnare för att ändra antal sidor som visas
-let quantity = document.getElementById("quantity");
-quantity.addEventListener('change', changeQuantity);
-
-function changeQuantity() {
-    let quantityValue = document.getElementById("quantity").value;
-    let sortingData = document.getElementById("typeSelect").value;
-    let sortUrl;
-
-    if (sortingData === "movie") {
-        sortUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
-    } else {
-        sortUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&sort_by=popularity.desc`;
-    }
-    
-    getAllMedia(sortUrl, quantityValue);
-}
+const quantity = document.getElementById("quantity");
+quantity.addEventListener('change', () => {
+    changeQuantity(apiKey, getAllMedia);
+});
 
 
-// Händelselyssnare för att ändra filmtyp eller TV program
-
+// Händelselyssnare för att ändra filmtyp eller TV-program
 let movieTypeSelector = document.getElementById("typeSelect");
-movieTypeSelector.addEventListener('change', sort_by);
-let sortingData;
-async function sort_by() {
-    sortingData = document.getElementById('typeSelect').value;
-    // console.log("sortingData");
-    let sortUrl;
-    if(sortingData === "movie") {
-        sortUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
-    } else {
-        sortUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&sort_by=popularity.desc`;
-    }
-    getAllMedia(sortUrl, 1);
-}
+movieTypeSelector.addEventListener('change', () => {
+    sort_by(apiKey, getAllMedia, movieTypeSelector.value);
+});
 
-
+sort_by(apiKey, getAllMedia, movieTypeSelector.value);
 // Händelselyssnare för sökmotor när användaren skriver film eller tv namn
 let MyBtn = document.getElementById("Btn");
-MyBtn.addEventListener('click', searchMovieOrShow);
-
-
-sort_by();
-
-
-
+MyBtn.addEventListener('click', () => searchMovieOrShow(apiKey));
 
 
 const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
