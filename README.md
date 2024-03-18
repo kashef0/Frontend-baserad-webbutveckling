@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# Frontend-baserad-webbutveckling
+=======
+>>>>>>> b67b818ee1e5014002847c93668d0d6ceab89e0b
 
 # Projektbeskrivning: Film- och TV-serievisningssida med översättning
 
